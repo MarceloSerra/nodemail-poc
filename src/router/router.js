@@ -15,7 +15,6 @@ router.get("/healthcheck", (req, res) => {
 });
 
 router.post("/email/send", async (req, res) => {
-	console.log(req.body);
 	const { to, subject, text, html } = req.body;
 
 	const response = await email.service.send({ to, text, html, subject });
